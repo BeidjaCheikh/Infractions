@@ -1,8 +1,11 @@
-package org.sid.infraction.models;
-
-import lombok.Data;
+package org.sid.radar.model;
+import lombok.*;
 
 @Data
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Vehicle {
     private Long id;
@@ -10,4 +13,6 @@ public class Vehicle {
     private String marque;
     private int puissanceFiscale;
     private String model;
+
+    private Owner owner;
 }

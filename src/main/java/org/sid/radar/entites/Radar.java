@@ -1,26 +1,29 @@
-package org.sid.infraction.entites;
+package org.sid.radar.entites;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.sid.radar.model.Infraction;
+
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
 
-public class Infraction {
+public class Radar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Double vitesseMax ;
+    private Double longitude;
+    private Double latitude;
     @Transient
-    private int  numRadar;
-    @Transient
-    private String vehicleMatricule;
-    @Transient
-    private double vehicleSpeed;
-    private double radarMaxSpeed;
-    private double amount;
+    private List<Infraction> infractions;
+
+
 }
